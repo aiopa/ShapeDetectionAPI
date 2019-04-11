@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="shapeDetector.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+    <h3>Face redaer</h3>
+    <input id="face" type="file" onchange="readURL(this, 'face'); ">
+    
+    <h3>Barcode reader</h3>
+    <input id="bar" type="file" onchange="readURL(this, 'bar'); ">
+
+    <h3>Text detection</h3>
+    <input id="text" type="file" onchange="readURL(this, 'text'); ">
+
+    <div id="imageWrapper">
+        <img id="img_prev" src="#" alt="your image" />
+        <div id="textWrapper"></div>
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "shapedetectionapi",
+  "version": "1.0.0",
+  "description": "A test repo for shape detection api",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aiopa/ShapeDetectionAPI.git"
+  },
+  "author": "Nicholas O'Malley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aiopa/ShapeDetectionAPI/issues"
+  },
+  "homepage": "https://github.com/aiopa/ShapeDetectionAPI#readme"
+}
