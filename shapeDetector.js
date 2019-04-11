@@ -9,11 +9,13 @@ const faceDetector = new FaceDetector({
 async function detectFace(image) {
     try {
         const faces = await faceDetector.detect(image);
-        faces.forEach(face => console.log(face));
+        faces.forEach(face => {
+            console.log(face);
+            $( "#imageWrapper" ).append('<div class="imageBox" style="width:'+face.boundingBox.width+'px; height:'+face.boundingBox.height+'px; left:'+face.boundingBox.left+'px; top:'+face.boundingBox.top+'px;"></div>');
+        });
     } catch (e) {
         console.error('Face detection failed:', e);
     }
-
 }
 console.log("faceDetector", faceDetector);
 
@@ -58,13 +60,11 @@ const textDetector = new TextDetector();
 async function detectText(image) {
     try {
         const texts = await textDetector.detect(image);
-        texts.forEach(text => console.log(text));
-        var wrapper = document.querySelector('#textWrapper');
-        wrapper.style.width = texts[0].boundingBox.width + "px";
-        wrapper.style.height = texts[0].boundingBox.height + "px";
-        wrapper.style.bottom = texts[0].boundingBox.bottom + "px";
-        wrapper.style.right = texts[0].boundingBox.right + "px";
-    } catch (e) {
+        texts.forEach(text => {
+            console.log(text);
+            $( "#imageWrapper" ).append('<div class="imageBox" style="width:'+text.boundingBox.width+'px; height:'+text.boundingBox.height+'px; left:'+text.boundingBox.left+'px; top:'+text.boundingBox.top+'px;"></div>');
+        });
+        } catch (e) {
         console.error('Text detection failed:', e);
     }
 
