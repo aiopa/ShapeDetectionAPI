@@ -59,9 +59,9 @@ console.log("barcodeDetector", barcodeDetector);
 const textDetector = new TextDetector();
 async function detectText(image) {
     try {
+        console.log(image)
         const texts = await textDetector.detect(image);
         texts.forEach(text => {
-            console.log(text);
             $( "#imageWrapper" ).append('<div class="imageBox" style="width:'+text.boundingBox.width+'px; height:'+text.boundingBox.height+'px; left:'+text.boundingBox.left+'px; top:'+text.boundingBox.top+'px;"></div>');
         });
         } catch (e) {
@@ -95,7 +95,6 @@ function readURL(input, type) {
         reader.onload = function (e) {
             var img = document.querySelector('#img_prev')
             img.setAttribute('src', e.target.result);
-            var div = document.querySelector('#imgWrapper');
             setTimeout(() => {
                 previewFile(type);
             },20)
