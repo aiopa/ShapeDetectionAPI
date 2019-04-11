@@ -45,10 +45,9 @@ async function detectBarcode(image) {
         var html = "";
         barcodes.forEach(barcode => {
             console.log(barcode);
-            html += '<p>'+barcode.rawValue+'<p>';
+            $( "#imageWrapper" ).append('<p>'+barcode.rawValue+'<p>');
         });
-        var wrapper = document.querySelector('#textWrapper');
-        wrapper.innerHTML = html;
+
     } catch (e) {
         console.error('Barcode detection failed:', e);
     }
